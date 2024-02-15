@@ -1,86 +1,23 @@
-# Laravel Auth Template
-```
-composer create-project laravel/laravel nomeprogetto
-```
+## Milestone 1
 
-# Installazione breeze
-```
-composer require laravel/breeze --dev
-```
+[x] nome repo 1: laravel-api
+Aggiungiamo al nostro progetto Laravel una nuovo Api/ProjectController. Questo controller risponderà a delle richieste via API e si occuperà di restituire la lista dei progetti presenti nel database in formato json.
 
-# Scaffold dell'autenticazione breeze/blade
-```
-php artisan breeze:install
-```
+## Milestone 2
 
-- Which Breeze stack would you like to install? Blade with Alpine
-- Would you like dark mode support? Yes
-- Which testing framework do you prefer? PHPUnit
+[x] Testiamo la chiamata API tramite Postman e assicuriamoci di ricevere i dati correttamente.
 
+## Milestone 3
 
-## Eseguire i passaggi per installare bootstrap invece di tailwind
-```
-npm remove postcss
-npm remove tailwindcss
-npm i --save-dev sass
-npm i --save bootstrap @popperjs/core
-```
-Cancellare il file tailwind.config.js e postcss.config.js
-```
-rm tailwind.config.js
-rm postcss.config.js
-```
+[x] nome repo 2: vite-boolfolio
+Iniziamo ad occuparci della parte front-office della nostra applicazione: creiamo un nuovo progetto Vue 3 con Vite e installiamo axios.
+Colleghiamo questo progetto ad una repo separata.
 
-Rinominiamo la cartella css in scss 
-```
-mv resources/css resources/scss
-```
-ed il file app.css in app.scss
-```
-mv resources/scss/app.css  resources/scss/app.scss
-```
+## Milestone 4
 
-## Nel file app.scss
-Cancelliamo gli import di tailwind dal file app.scss e inseriamo:
-```
-@import "~bootstrap/scss/bootstrap";
-```
+Nel componente principale della nostra Vue App facciamo una chiamata API all’endpoint costruito nel progetto Laravel (milestone 1) e recuperiamo tutti i progetti dal nostro back-end.
+Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente.
 
-## Nel file vite.config.js:
+## Milestone 5
 
-- modifichiamo il percorso del css
-- aggiungiamo un alias per resources e per il bootstrap
-
-```
-import path from 'path';
-
-resolve: {
-        alias: {
-            '~resources': '/resources/',
-            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap')
-        }
-    },
-```
-
-## Nel file app.js 
-
-- togliere il codice che imposta alpine, lasciando solo la prima riga
-- importare app.css, bootstrap e img
-```
-import '~resources/scss/app.scss'
-import * as bootstrap from 'bootstrap'
-import.meta.glob([
-    '../img/**'
-])
-```
-
-## Inserire le views con bootstrap
-Cancellare tutti i file di default dalla cartella views e inserire i file presenti in questa repo
-
-## Partenza
-1. installare le dipendenze di npm e composer
-2. inserire dati nel file .env
-3. far partire le migrations
-4. avviare il server (php e node)
-
-Buon lavoro!
+Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
