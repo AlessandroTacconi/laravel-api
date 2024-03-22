@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-between container">
         <div class="left">
             <h1 class="proj">My projects</h1>
-            {{-- <a href="{{ route('admin.projects.create')}}" class="btn btn-success btn-sm" role="button">Add a project</a> --}}
+
         </div>
         <div class="scorrevole">
             <ul class="d-flex flex-column gap-3 mt-5">
